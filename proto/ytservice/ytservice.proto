@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ytservice;
+option go_package="ytservicepb";
+
+service YTservice {
+    rpc SearchVideo(SearchVideoReq) returns (SearchVideoResp){};
+}
+
+message SearchVideoReq {
+    string videoName = 1;
+}
+
+message SearchVideoResp {
+    map<string, string> resp = 1;
+}
